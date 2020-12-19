@@ -1,6 +1,7 @@
 var readlineSync = require("readline-sync");
 const chalk = require("chalk"); 
 var score= 0;
+var HighScore = 6;
 
 var log = console.log;
 
@@ -57,5 +58,11 @@ if(userAnswers.toLowerCase() === currentAnswer.toLowerCase() ){
 
 quiz(questionList);
   log(chalk.red.bold("You Scored: ")+ chalk.bgGreen.black(score ));
+if(score > HighScore){
+  HighScore = score;
+}
+  log(chalk.red.bold("High Score is: ")+ chalk.bgGreen.black(HighScore ));
+
+  log(chalk.bgGreen.black.bold("If you have scored Higher then HighScore Please Send me Screenshot.\n I will update it"))
 
 
